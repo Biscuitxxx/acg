@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+
+# local runtime data (uploaded files, index.json)
+data/
+tmp/
+
+# logs
+*.log
+dns.err.log
+dns.out.log
+server.err.log
+server.out.log
+vite.err.log
+vite.out.log
+
+# typescript build cache
+*.tsbuildinfo
+
+# env
+.env
+.env.local
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# pnpm
+.pnpm-store/
