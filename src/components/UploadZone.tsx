@@ -55,7 +55,7 @@ export function UploadZone() {
             <UploadCloud className="size-7" strokeWidth={1.8} />
           </span>
           <div className="w-full min-w-0 flex-1">
-            <p className="font-display text-base font-semibold">把文件丢进次元架</p>
+            <p className="font-display text-base font-semibold">把文件拖到这里</p>
             <p className="mx-auto mt-1 max-w-[34ch] text-xs leading-5 text-muted-foreground sm:text-[13px]">
               支持视频、照片、文档、音频、压缩包与笔记 · 单文件上限 {formatSize(MAX_FILE_BYTES)}
             </p>

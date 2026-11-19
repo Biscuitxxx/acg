@@ -1,14 +1,14 @@
 /**
- * 局域网小 DNS —— 把 acg.lan 解析到自己这台机器，其他域名照常转发
+ * 局域网小 DNS —— 把 relay.lan 解析到自己这台机器，其他域名照常转发
  *
- * 用途：让手机 / 平板 / 别的电脑输入 acg.lan:8787，而不是记 192.168.5.134:8787
+ * 用途：让手机 / 平板 / 别的电脑输入 relay.lan:8787，而不是记 192.168.5.134:8787
  *
  * 跑起来（Windows 上普通用户就能绑定 53，不需要管理员）：
  *   node dns.mjs
  *
  * 想改配置就用环境变量：
- *   DNS_TARGET=192.168.5.134      acg.lan 指向哪台机器
- *   DNS_ZONE=acg.lan,acg         要拦截的名字（逗号分隔，可以多个）
+ *   DNS_TARGET=192.168.5.134      relay.lan 指向哪台机器
+ *   DNS_ZONE=relay.lan,relay     要拦截的名字（逗号分隔，可以多个）
  *   DNS_UPSTREAM=202.96.128.86   其他域名转发给谁（默认本机在用的电信 DNS）
  *   DNS_PORT=53                 监听端口
  *
@@ -20,7 +20,7 @@ import { createSocket } from "node:dgram";
 const PORT = Number(process.env.DNS_PORT || 53);
 const HOST = process.env.DNS_HOST || "0.0.0.0";
 const TARGET_IP = process.env.DNS_TARGET || "192.168.5.134";
-const ZONE = (process.env.DNS_ZONE || "acg.lan")
+const ZONE = (process.env.DNS_ZONE || "relay.lan")
   .split(",")
   .map((s) => s.trim().toLowerCase())
   .filter(Boolean);

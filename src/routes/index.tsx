@@ -16,7 +16,7 @@ import type { FileMeta } from "@/lib/site";
 export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
-    meta: [{ title: "ACG 中转站 · 内网文件传输" }],
+    meta: [{ title: "内网传输中转站 · 局域网文件互传" }],
   }),
 });
 

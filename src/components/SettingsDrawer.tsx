@@ -71,7 +71,7 @@ export function SettingsDrawer({ open, onClose }: { open: boolean; onClose: () =
         <div className="space-y-6 p-4">
           {/* 壁纸 */}
           <section>
-            <SectionTitle>次元壁纸</SectionTitle>
+            <SectionTitle>背景壁纸</SectionTitle>
             <div className="grid grid-cols-3 gap-2">
               {WALLPAPER_PRESETS.map((p) => {
                 const on = !prefs.customWallpaper && prefs.wallpaperId === p.id;

@@ -348,9 +348,9 @@ function EmptyState({ hasAny }: { hasAny: boolean }) {
       <span className="sticker float-drift grid size-16 place-items-center rounded-3xl bg-gradient-to-br from-primary-soft to-accent-teal/20 text-2xl">
         {hasAny ? "🔍" : "🗂️"}
       </span>
-      <p className="mt-1 font-display text-[15px] font-semibold">{hasAny ? "这里空空如也" : "次元架还是空的"}</p>
+      <p className="mt-1 font-display text-[15px] font-semibold">{hasAny ? "这里空空如也" : "文件列表还是空的"}</p>
       <p className="max-w-xs text-[12px] leading-5 text-muted-foreground">
-        {hasAny ? "换个关键词或分类看看，也可以清除筛选条件。" : "把手机里的照片、视频、文档拖到上方区域，就能寄存在这里。"}
+        {hasAny ? "换个关键词或分类看看，也可以清除筛选条件。" : "把手机里的照片、视频、文档拖到上方区域，就能传到这里。"}
       </p>
       {hasAny && (
         <button

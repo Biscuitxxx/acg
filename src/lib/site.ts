@@ -3,8 +3,8 @@
  * 只放数据，不放 JSX 组件。
  */
 
-export const APP_NAME = "ACG 中转站";
-export const APP_TAGLINE = "把文件寄存在你的专属次元架";
+export const APP_NAME = "内网传输中转站";
+export const APP_TAGLINE = "在你的局域网里互传文件";
 
 /** 单文件大小上限（本地演示版受浏览器存储限制，实际可用量看顶栏的配额仪表） */
 export const MAX_FILE_BYTES = 2048 * 1024 * 1024;

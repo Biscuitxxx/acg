@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ACG 中转站 · 本地服务端（零依赖，只用 node 内置模块）
+ * 内网传输中转站 · 本地服务端（零依赖，只用 node 内置模块）
  *
  * 为什么要有它：纯前端版本把文件存在浏览器 IndexedDB 里，
  * 手机连过来看到的是手机自己的空库，跨设备永远看不到同一份数据。
@@ -8,7 +8,7 @@
  *
  * 启动：node server/index.mjs            （默认 8787）
  *      PORT=9000 node server/index.mjs
- *      ACG_DATA=/sdcard/acg node server/index.mjs
+ *      RELAY_DATA=/sdcard/relay node server/index.mjs
  *
  * 数据目录结构（默认 ./data）：
  *   data/index.json      元信息数组
@@ -40,7 +40,7 @@ import { fileURLToPath } from "node:url";
 import { networkInterfaces } from "node:os";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
-const DATA_DIR = resolve(process.env.ACG_DATA || join(ROOT, "data"));
+const DATA_DIR = resolve(process.env.RELAY_DATA || join(ROOT, "data"));
 const FILES_DIR = join(DATA_DIR, "files");
 const INDEX_PATH = join(DATA_DIR, "index.json");
 const DIST_DIR = join(ROOT, "dist");
@@ -48,7 +48,7 @@ const PORT = Number(process.env.PORT || 8787);
 const HOST = process.env.HOST || "0.0.0.0";
 
 /** 单文件上限：给后端也留一道，和前端 site.ts 的 MAX_FILE_BYTES 对齐即可 */
-const MAX_BYTES = Number(process.env.ACG_MAX_BYTES || 2048 * 1024 * 1024);
+const MAX_BYTES = Number(process.env.RELAY_MAX_BYTES || 2048 * 1024 * 1024);
 const ID_RE = /^[A-Za-z0-9-]{6,64}$/;
 
 mkdirSync(FILES_DIR, { recursive: true });
@@ -543,7 +543,7 @@ function lanAddresses() {
 server.listen(PORT, HOST, () => {
   const quota = diskQuota();
   const lan = lanAddresses();
-  console.log(`[server] ACG 中转站已启动`);
+  console.log(`[server] 内网传输中转站已启动`);
   console.log(`[server]   本机       http://localhost:${PORT}`);
   if (lan.length) {
     for (const a of lan) console.log(`[server]   局域网     http://${a.ip}:${PORT}   (${a.name})`);

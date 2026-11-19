@@ -37,7 +37,7 @@ export function ClearBar() {
     setTimeout(() => setBurst(false), 750);
     setBusy(false);
     setConfirmOpen(false);
-    toast.success("次元架已清空");
+    toast.success("文件已清空");
   }
 
   return (

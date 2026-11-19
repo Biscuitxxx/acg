@@ -1,4 +1,4 @@
-# ACG 中转站
+# 内网传输中转站
 
 内网文件传输中转站。一个 Node 进程，浏览器打开就能用——电脑、手机、平板在同一个 WiFi 下，互相拖文件进去、拖出来，不需要装 App，也不依赖任何云服务。
 
@@ -27,7 +27,7 @@ pnpm build
 node server/index.mjs
 
 # 自定义端口 / 数据目录
-PORT=9000 ACG_DATA=/path/to/data node server/index.mjs
+PORT=9000 RELAY_DATA=/path/to/data node server/index.mjs
 ```
 
 浏览器打开终端里打印的局域网地址即可。
@@ -41,13 +41,13 @@ PORT=9000 ACG_DATA=/path/to/data node server/index.mjs
    pkg update && pkg install nodejs-lts -y
    termux-wake-lock
    ```
-2. 从 [Releases](../../releases) 下载 `acg-termux.tar.gz`，传到手机：
+2. 从 [Releases](../../releases) 下载 `relay-termux.tar.gz`，传到手机：
    ```bash
-   mkdir -p ~/acg && tar xzf acg-termux.tar.gz -C ~/acg
+   mkdir -p ~/relay && tar xzf relay-termux.tar.gz -C ~/relay
    ```
 3. 启动：
    ```bash
-   bash ~/acg/acg-termux/start.sh
+   bash ~/relay/relay-termux/start.sh
    ```
 4. 同一 WiFi 下的电脑访问 `http://<手机IP>:8787`。
 
@@ -63,7 +63,7 @@ PORT=9000 ACG_DATA=/path/to/data node server/index.mjs
 
 - 前端：React 19 + Vite 7 + TanStack Router + Tailwind v4 + Radix UI
 - 后端：Node 原生 `http`，文件落盘到 `data/files/`，元信息存 `data/index.json`
-- 单文件上限：默认 2GB（`ACG_MAX_BYTES` 可调）
+- 单文件上限：默认 2GB（`RELAY_MAX_BYTES` 可调）
 
 ## 协议
 

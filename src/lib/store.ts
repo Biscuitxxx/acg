@@ -2,7 +2,7 @@ import { useSyncExternalStore } from "react";
 import type { FileKind, FileMeta, SortKey, TransferTask, ViewMode } from "./site";
 import { MAX_FILE_BYTES, detectKind, uid } from "./site";
 
-const PREF_KEY = "acg.prefs.v1";
+const PREF_KEY = "relay.prefs.v1";
 
 /**
  * 持久层分工：

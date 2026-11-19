@@ -100,7 +100,7 @@ export function TransferQueue() {
                   <p className="mt-1 truncate text-[11px] text-muted-foreground">
                     {t.status === "uploading" && `${formatSpeed(t.speed)} · 剩余 ${formatEta(t.eta)}`}
                     {t.status === "paused" && `已暂停 · ${formatSize(t.loaded)} / ${formatSize(t.size)}`}
-                    {t.status === "done" && `${formatSize(t.size)} · 已存入次元架`}
+                    {t.status === "done" && `${formatSize(t.size)} · 已存入`}
                     {t.status === "error" && (t.error ?? "传输失败")}
                     {t.status === "queued" && "排队等待中"}
                   </p>

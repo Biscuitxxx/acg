@@ -3,7 +3,7 @@
  * 换设备不可见 —— 待云服务开通后由 Storage + 数据表替换这一层。
  */
 
-const DB_NAME = "acg-transfer";
+const DB_NAME = "relay-transfer";
 const DB_VERSION = 1;
 const STORE = "blobs";
 

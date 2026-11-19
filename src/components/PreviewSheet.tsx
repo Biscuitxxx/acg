@@ -134,7 +134,7 @@ export function PreviewSheet({
           {loading && (
             <div className="flex h-64 flex-col items-center justify-center gap-2 text-muted-foreground">
               <Loader2 className="size-6 animate-spin" />
-              <p className="text-[12px]">正在从次元架取出…</p>
+              <p className="text-[12px]">正在读取文件…</p>
             </div>
           )}
 

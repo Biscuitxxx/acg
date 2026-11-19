@@ -28,7 +28,7 @@ export function NoteComposer({ open, onClose, editing }: { open: boolean; onClos
       toast.success("笔记已更新");
     } else {
       await store.addNote(title.trim(), body);
-      toast.success("笔记已放进次元架");
+      toast.success("笔记已保存");
     }
     onClose();
   }
